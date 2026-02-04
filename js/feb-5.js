@@ -81,3 +81,29 @@ function bas_hogaya() {
     }
   });
 }
+
+const text = `You might be wondering what this is, and what dumb thing have i done now. Tbh, i too have no idea 😂, cause this is one of the many pages there are that i will be making. So i also have no idea what could be done, what will be done i have no idea. All i hope is it completes on time and tujhe pasand aaye (aayega hi 🤞), and You are Cute, "Kab puchega BSDK" bana raha hu baby gurll ek din me hojana chahiye ig. Hogaya to miljayega wrna moye moye 😂. Chalo enjoy kro aap assi chale.`;
+const letterEl = document.getElementById("letter");
+const endingEl = document.querySelectorAll(".ending");
+let i = 0;
+
+function type() {
+  if (i < text.length) {
+    letterEl.innerHTML += text.charAt(i);
+    i++;
+
+    let delay = 60; //set 0 to 60
+    if (text.charAt(i - 1) === "," || text.charAt(i - 1) === "\n") delay = 500; //set 0 to 500
+    if (text.charAt(i - 1) === ".") delay = 800; //set 0 to 800
+
+    setTimeout(type, delay);
+  } else {
+    endingEl.forEach((element) => {
+      element.classList.add("show");
+    });
+  }
+}
+
+setTimeout(() => {
+  type();
+}, 5000);

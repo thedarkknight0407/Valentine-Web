@@ -4,6 +4,7 @@ const today_date = new Date();
 const valentine = new Date("2026-02-14");
 if (10 - Math.round((valentine - today_date) / (3600 * 24000)) > 1) {
   body[0].classList.remove("d-none");
+  //   window.location.href = "/shanpatti.html";
 }
 console.log(10 - Math.round((valentine - today_date) / (3600 * 24000)));
 
@@ -45,7 +46,7 @@ function type() {
     letterEl.innerHTML += text.charAt(i);
     i++;
 
-    let delay = 500; //set 0 to 500
+    let delay = 60; //set 0 to 500
     if (text.charAt(i - 1) === "," || text.charAt(i - 1) === "\n") delay = 500; //set 0 to 500
     if (text.charAt(i - 1) === ".") delay = 800; //set 0 to 800
 

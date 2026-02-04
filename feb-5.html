@@ -11,6 +11,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="images/svg/heart.svg" type="image/x-svg" />
+
+    <style>
+      #letter::after {
+        content: "";
+        position: absolute;
+        background: var(--font-clr-pri);
+        height: 25px;
+        width: 2px;
+        animation: blink 1s ease-out infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .ending {
+        margin-top: 80px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 2s ease;
+      }
+
+      .hidden {
+        opacity: 0;
+      }
+
+      .show {
+        opacity: 1;
+      }
+    </style>
   </head>
   <body class="container-fluid d-flex flex-column align-items-center p-5 d-none">
     <div class="heading-text">
@@ -43,8 +81,8 @@
 
     <div class="content feb-5 d-flex flex-column w-100 mb-5">
         <p class="fs-4">Heyyyy there cutie!</p>
-        <p>You might be wondering what this is, and what dumb thing have i done now. Tbh, i too have no idea 😂, cause this is one of the many pages there are that i will be making. So i also have no idea what could be done, what will be done i have no idea. All i hope is it completes on time and tujhe pasand aaye (aayega hi 🤞), and You are Cute, "Kab puchega BSDK" bana raha hu baby gurll ek din me hojana chahiye ig. Hogaya to miljayega wrna moye moye 😂. Chalo enjoy kro aap assi chale. </p>
-        <span class="align-self-end">&#8212Angry Small Women ka Gulaam</span>
+        <p id="letter"></p>
+        <span class="align-self-end hidden ending">&#8212Angry Small Women ka Gulaam</span>
     </div>
 
     <div class="content feb-5 d-flex justify-content-center flex-column w-100 mb-5">
