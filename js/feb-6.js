@@ -46,7 +46,7 @@ function type() {
     letterEl.innerHTML += text.charAt(i);
     i++;
 
-    let delay = 60; //set 0 to 500
+    let delay = 60; //set 0 to 60
     if (text.charAt(i - 1) === "," || text.charAt(i - 1) === "\n") delay = 500; //set 0 to 500
     if (text.charAt(i - 1) === ".") delay = 800; //set 0 to 800
 
@@ -61,6 +61,8 @@ function type() {
 const no_btn = document.getElementById("btn-no");
 const yes_btn = document.getElementById("btn-yes");
 const error_box = document.getElementById("error-box");
+const yay_close_btn = document.getElementById("yay-close-button");
+
 let click_count_no_btn = no_btn.getAttribute("data-click");
 
 no_btn.addEventListener("click", () => {
@@ -79,6 +81,85 @@ no_btn.addEventListener("click", () => {
   no_btn.style.scale = t2 - 0.2;
   click_count_no_btn++;
 });
+
+function launchConfetti() {
+  const container = document.getElementById("confetti-container");
+  const colors = ["#f9a8d4", "#c4b5fd", "#bae6fd"];
+
+  for (let i = 0; i < 80; i++) {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+
+    const size = Math.random() * 8 + 4;
+    confetti.style.width = size + "px";
+    confetti.style.height = size + "px";
+
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    const duration = Math.random() * 4 + 6;
+    confetti.style.animationDuration = duration + "s";
+
+    container.appendChild(confetti);
+
+    setTimeout(() => confetti.remove(), duration * 1000);
+  }
+}
+
+yes_btn.addEventListener("click", () => {
+  console.log("animation krayi jaye haeheah");
+  const yay_box = document.getElementById("yay-box");
+  yay_box.classList.remove("d-none");
+  setTimeout(() => {
+    fadeInMusic();
+  }, 300);
+
+  setTimeout(() => {
+    launchConfetti();
+  }, 1100);
+});
+
+yay_close_btn.addEventListener("click", () => {
+  const yay_box = document.getElementById("yay-box");
+  yay_box.classList.add("d-none");
+});
+
+function fadeInMusic() {
+  music.volume = 0;
+  music.play();
+
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 0.2) {
+      vol += 0.01;
+      music.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 100);
+}
+
+const music = document.getElementById("bg-music");
+
+let isPlaying = false;
+
+music.volume = 0.2; // soft by default
+
+function fadeInMusic() {
+  music.volume = 0;
+  music.play();
+
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 0.7) {
+      vol += 0.01;
+      music.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 100);
+}
 
 setTimeout(() => {
   type();

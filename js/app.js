@@ -4,7 +4,7 @@ const date = new Date();
 const valentine = new Date("2026-02-14");
 const days_left = Math.round((valentine - date) / (1000 * 60 * 60 * 24));
 console.log(days_left);
-for (let i = 0; i < 10 - days_left; i++) {
+for (let i = 0; i < 9 - days_left; i++) {
   let element1 = locked_hearts[i];
   let element2 = unlocked_hearts[i];
 
