@@ -48,7 +48,7 @@ const reasons = [
 ];
 
 function bas_hogaya() {
-  const hidden_cont = document.querySelector(".content.feb-5 .hidden");
+  const hidden_cont = document.querySelector(".content.feb-5 .hidden-box");
   const real_click_me = document.getElementById("real-click-me");
   const reasons_list = document.querySelector(".thingy ul");
   const why = document.querySelector(".thingy .h1");
