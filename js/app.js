@@ -43,7 +43,7 @@ open_days.forEach((e) => {
 
 function open_url(date, element) {
   if (date - 5 < 10 - days_left) {
-    window.location.href = `feb-${date}.html`;
+    window.location.href = `Valentine-Web/feb-${date}.html`;
     console.log("here");
   }
 }
