@@ -1,6 +1,6 @@
 const locked_hearts = document.querySelectorAll(".img-lock");
 const unlocked_hearts = document.querySelectorAll(".img-unlock");
-const date = new Date("2026-02-12");
+const date = new Date();
 const valentine = new Date("2026-02-14");
 const days_left = Math.round((valentine - date) / (1000 * 60 * 60 * 24));
 console.log(days_left);
