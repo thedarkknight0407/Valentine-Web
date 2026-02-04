@@ -47,3 +47,4 @@ function open_url(date, element) {
     console.log("here");
   }
 }
+
