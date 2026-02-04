@@ -55,7 +55,7 @@ function bas_hogaya() {
   let flag = false;
   let click_count_reasons = 0;
   click_me.classList.add("d-none");
-  hidden_cont.classList.remove("hidden");
+  hidden_cont.classList.remove("hidden-box");
 
   real_click_me.addEventListener("click", () => {
     if (flag && click_count_reasons < reasons.length) {
