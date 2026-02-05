@@ -48,3 +48,19 @@ function open_url(date, element) {
   }
 }
 
+function fadeInMusic() {
+  music.volume = 0;
+  music.play();
+
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 0.2) {
+      vol += 0.01;
+      music.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 100);
+}
+
+const music = document.getElementById("bg-music");
