@@ -4,7 +4,8 @@ const today_date = new Date();
 const valentine = new Date("2026-02-14");
 if (10 - Math.round((valentine - today_date) / (3600 * 24000)) > 1) {
   body[0].classList.remove("d-none");
-  //   window.location.href = "/shanpatti.html";
+} else {
+  window.location.href = "shanpatti.html";
 }
 console.log(10 - Math.round((valentine - today_date) / (3600 * 24000)));
 

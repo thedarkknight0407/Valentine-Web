@@ -1,0 +1,64 @@
+/* .quiz-container {
+  outline: 1px solid green;
+
+  * {
+    outline: 1px solid green;
+  }
+} */
+
+.option {
+  transition-duration: 200ms;
+}
+
+.option:hover {
+  background: var(--font-clr-pri);
+  * {
+    color: white;
+  }
+}
+
+#confetti-container,
+#heart-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.confetti {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: absolute;
+  top: unset;
+  bottom: -2rem;
+  border-radius: 0;
+  animation: rise linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  display: none !important;
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
+    <title>Valentines</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/svg/heart.svg" type="image/x-svg" />
+
+    <style>
+      #letter::after {
+        content: "";
+        position: absolute;
+        background: var(--font-clr-pri);
+        height: 25px;
+        width: 2px;
+        animation: blink 1s ease-out infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .ending {
+        margin-top: 80px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 2s ease;
+      }
+
+      .hidden {
+        opacity: 0;
+      }
+
+      .show {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="container-fluid d-flex flex-column align-items-center p-5" style="max-height: 100vh">
+    <div class="heading-text mb-5">
+      <h1 class="display-1 text-center">Valentine</h1>
+      <h1 class="display-1 text-center">Advent Calendar</h1>
+      <h4 class="text-end">
+        Made for you
+        <img
+          src="images/svg/heart.svg"
+          style="width: 2.5rem"
+          alt=""
+          srcset=""
+        />
+      </h4>
+    </div>
+
+    <div class="text-box my-5 d-flex align-items-center">
+        <div class="text display-3">Cheating Nhi Darling You Gotta Wait 😘</div>
+    </div>
+
+    <button class="btn btn-danger w-100 p-3" onclick="window.location.href = '/'"><div class="text-white display-4 text-capitalize">Back to home page</div></button>
+
+    <div class="footer-text w-100 mt-5">
+      <h4 class="text-end">
+        &#8212Made by you know who
+        <img
+          src="images/svg/heart.svg"
+          style="width: 2.5rem"
+          alt=""
+          srcset=""
+        />
+      </h4>
+    </div>
+  </body>
+</html>
