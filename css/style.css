@@ -18,7 +18,7 @@
 }
 
 body {
-  min-height: 200vh;
+  /* min-height: 200vh; */
   min-width: 100vw;
 }
 
@@ -131,4 +131,8 @@ body {
     }
     display: none;
   }
+}
+
+button.next {
+  transform: rotate(180deg);
 }

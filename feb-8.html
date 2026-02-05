@@ -10,9 +10,10 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/feb-8.css" />
     <link rel="shortcut icon" href="images/svg/heart.svg" type="image/x-svg" />
   </head>
-  <body class="container-fluid d-flex flex-column align-items-center p-5">
+  <body class="container-fluid d-flex flex-column align-items-center p-5 d-none">
     <div class="heading-text">
       <h1 class="display-1 text-center">Valentine</h1>
       <h1 class="display-1 text-center">Advent Calendar</h1>
@@ -37,11 +38,84 @@
         <button 
         onclick="window.location.href = 'feb-9.html'"
         class="next btn btn-danger align-self-end" style="width: 3rem;">
-            <svg viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(180)" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
+            <svg viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
         </button>
     </div>
 
-    memory lane
+    <button id="time-btn" class="time-btn">
+      Travel through our memories
+    </button>
+
+    <p class="final-line hidden fs-2 my-3">
+      And I’d relive it all with you.
+    </p>
+    <div id="final-present hidden" >
+      <p class="fs-2 text-center final-present mb-3 hidden">
+        This is my favorite moment — with you, right now.
+        <br>
+      </p>
+      <hr class="hidden">
+      <p class="fs-2 text-center final-present mb-3 hidden">
+        <br>
+        I Love You Sweet Heart
+        <br>
+        I Always Will
+        <br>
+        You Will Always be Mine &#10084;
+      </p>
+    </div>
+
+    <section class="memory-lane">
+      <h2 id="heading">Our Memory Lane</h2>
+
+      <div class="memory">
+        <span class="date fs-2">The day we met</span>
+        <img src="images/IMG_7276.PNG" alt="" />
+        <h3>It started quietly</h3>
+        <p>
+          I didn’t know it then, but that moment would change everything.
+        </p>
+      </div>
+
+      <div class="memory">
+        <span class="date fs-2">Our lucky day</span>
+        <img src="images/IMG_2080.PNG" alt="">
+        <h3>Nervous hearts</h3>
+        <p>
+          I remember how i felt that day.
+        </p>
+      </div>
+
+      <div class="memory">
+        <span class="date fs-2">Long Nights</span>
+        <img src="images/IMG_3369.JPG" alt="">
+        <h3>Laughing too hard</h3>
+        <p>
+          My favorite memories are the ones we didn’t plan.
+        </p>
+      </div>
+
+      <div class="memory">
+        <span class="date fs-2">Now</span>
+        <img src="images/IMG_1969.PNG" alt="">
+        <h3>Still choosing you</h3>
+        <p>
+          And I would do it all again, without hesitation.
+        </p>
+      </div>
+    </section>
+
+    <div id="return-section" class="mb-4 return hidden">
+      <p class="return-text">
+        And here we are.<br />
+        Still choosing each other.
+      </p>
+
+      <button id="return-btn" class="return-btn">
+        Return to now
+      </button>
+    </div>
+
 
     <div class="footer-text w-100">
       <h4 class="text-end">
@@ -54,6 +128,12 @@
         />
       </h4>
     </div>
+
+    <div id="heart-container"></div>
+
+    <audio id="bg-music" loop>
+      <source src="images/music/love.mp3" type="audio/mpeg">
+    </audio>
     <script src="js/feb-8.js"></script>
   </body>
 </html>
