@@ -14,24 +14,24 @@ if (
   window.location.href = "shanpatti.html";
 }
 
-// const symbols = ["💖", "💖", "🌸", "🌸", "✨", "✨", "🤍", "🤍"];
+//// const symbols = ["💖", "💖", "🌸", "🌸", "✨", "✨", "🤍", "🤍"];
 const symbols = [
   "images/memorygameimages/IMG_0798.PNG",
   "images/memorygameimages/IMG_0798.PNG",
-  "images/memorygameimages/IMG_1076.jpg",
-  "images/memorygameimages/IMG_1076.jpg",
-  "images/memorygameimages/IMG_1825.jpg",
-  "images/memorygameimages/IMG_1825.jpg",
+  "images/memorygameimages/IMG_1076.JPG",
+  "images/memorygameimages/IMG_1076.JPG",
+  "images/memorygameimages/IMG_1825.JPG",
+  "images/memorygameimages/IMG_1825.JPG",
   "images/memorygameimages/IMG_1969.PNG",
   "images/memorygameimages/IMG_1969.PNG",
-  "images/memorygameimages/IMG_3366.jpg",
-  "images/memorygameimages/IMG_3366.jpg",
-  "images/memorygameimages/IMG_3369.jpg",
-  "images/memorygameimages/IMG_3369.jpg",
-  "images/memorygameimages/IMG_3383.jpg",
-  "images/memorygameimages/IMG_3383.jpg",
-  "images/memorygameimages/IMG_4567.jpg",
-  "images/memorygameimages/IMG_4567.jpg",
+  "images/memorygameimages/IMG_3366.JPG",
+  "images/memorygameimages/IMG_3366.JPG",
+  "images/memorygameimages/IMG_3369.JPG",
+  "images/memorygameimages/IMG_3369.JPG",
+  "images/memorygameimages/IMG_3383.JPG",
+  "images/memorygameimages/IMG_3383.JPG",
+  "images/memorygameimages/IMG_4567.JPG",
+  "images/memorygameimages/IMG_4567.JPG",
 ];
 let firstCard = null;
 let lock = false;
