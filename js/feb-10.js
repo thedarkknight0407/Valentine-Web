@@ -14,7 +14,7 @@ if (
   window.location.href = "shanpatti.html";
 }
 
-// const symbols = ["💖", "💖", "🌸", "🌸", "✨", "✨", "🤍", "🤍"];
+//// const symbols = ["💖", "💖", "🌸", "🌸", "✨", "✨", "🤍", "🤍"];
 const symbols = [
   "images/memorygameimages/IMG_0798.png",
   "images/memorygameimages/IMG_0798.png",
