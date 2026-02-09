@@ -16,22 +16,22 @@ if (
 
 // const symbols = ["💖", "💖", "🌸", "🌸", "✨", "✨", "🤍", "🤍"];
 const symbols = [
-  "/images/memory-game-images/IMG_0798.png",
-  "/images/memory-game-images/IMG_0798.png",
-  "/images/memory-game-images/IMG_1076.jpg",
-  "/images/memory-game-images/IMG_1076.jpg",
-  "/images/memory-game-images/IMG_1825.jpg",
-  "/images/memory-game-images/IMG_1825.jpg",
-  "/images/memory-game-images/IMG_1969.png",
-  "/images/memory-game-images/IMG_1969.png",
-  "/images/memory-game-images/IMG_3366.jpg",
-  "/images/memory-game-images/IMG_3366.jpg",
-  "/images/memory-game-images/IMG_3369.jpg",
-  "/images/memory-game-images/IMG_3369.jpg",
-  "/images/memory-game-images/IMG_3383.jpg",
-  "/images/memory-game-images/IMG_3383.jpg",
-  "/images/memory-game-images/IMG_4567.jpg",
-  "/images/memory-game-images/IMG_4567.jpg",
+  "images/memorygameimages/IMG_0798.png",
+  "images/memorygameimages/IMG_0798.png",
+  "images/memorygameimages/IMG_1076.jpg",
+  "images/memorygameimages/IMG_1076.jpg",
+  "images/memorygameimages/IMG_1825.jpg",
+  "images/memorygameimages/IMG_1825.jpg",
+  "images/memorygameimages/IMG_1969.png",
+  "images/memorygameimages/IMG_1969.png",
+  "images/memorygameimages/IMG_3366.jpg",
+  "images/memorygameimages/IMG_3366.jpg",
+  "images/memorygameimages/IMG_3369.jpg",
+  "images/memorygameimages/IMG_3369.jpg",
+  "images/memorygameimages/IMG_3383.jpg",
+  "images/memorygameimages/IMG_3383.jpg",
+  "images/memorygameimages/IMG_4567.jpg",
+  "images/memorygameimages/IMG_4567.jpg",
 ];
 let firstCard = null;
 let lock = false;
