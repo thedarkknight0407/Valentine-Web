@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Me</title>
+
+    <style>
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #1f1c2c, #928dab);
+        font-family: system-ui, sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      #room {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+        padding: 26px;
+        border-radius: 18px;
+        width: 90%;
+        max-width: 420px;
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 12px;
+        border: none;
+        font-size: 1rem;
+      }
+
+      button {
+        background: #ff5e78;
+        color: white;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="room">
+      <div id="step1">
+        <p>
+          I’m here.<br />
+          Waiting.<br /><br />
+          There’s a lock on the door.<br />
+          It needs a date.
+        </p>
+        <input id="dateInput" placeholder="DD/MM or a word" />
+        <button onclick="unlock1()">Unlock</button>
+      </div>
+
+      <div id="step2" class="hidden">
+        <p>
+          The door creaks open a little.<br /><br />
+          You hesitate.<br />
+          What do you do?
+        </p>
+        <button onclick="unlock2()">Stay</button>
+        <button onclick="unlock2()">Try anyway</button>
+        <button onclick="unlock2()">Choose me</button>
+      </div>
+
+      <div id="step3" class="hidden">
+        <p>
+          One lock left.<br /><br />
+          What are you freeing?
+        </p>
+        <button onclick="wrong()">A girl</button>
+        <button onclick="wrong()">A heart</button>
+        <button onclick="unlock3()">Us</button>
+      </div>
+
+      <div id="end" class="hidden">
+        <p>
+          You did it.<br /><br />
+          I’m free.<br />
+          And I choose you. ❤️
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function unlock1() {
+        const val = document.getElementById("dateInput").value.trim();
+        if (val.length > 0) {
+          step1.classList.add("hidden");
+          step2.classList.remove("hidden");
+        }
+      }
+
+      function unlock2() {
+        step2.classList.add("hidden");
+        step3.classList.remove("hidden");
+      }
+
+      function unlock3() {
+        step3.classList.add("hidden");
+        end.classList.remove("hidden");
+      }
+
+      function wrong() {
+        alert("Close… but not quite.");
+      }
+    </script>
+  </body>
+</html>
