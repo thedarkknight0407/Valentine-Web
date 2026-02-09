@@ -6,3 +6,27 @@
 #canvas {
   background: #0f172a;
 }
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3498db;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  width: 100px;
+  height: 100px;
+  margin: 2px;
+  transition: all 02s;
+}
+.empty {
+  background: #ecf0f1;
+  cursor: default;
+}
+#puzzle {
+  display: flex;
+  flex-wrap: wrap;
+  width: 314px; /* 3 tiles * 100px + 2px margin * 6 */
+}

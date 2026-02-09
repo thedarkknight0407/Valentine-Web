@@ -14,16 +14,16 @@ if (
   window.location.href = "shanpatti.html";
 }
 
-//// const symbols = ["💖", "💖", "🌸", "🌸", "✨", "✨", "🤍", "🤍"];
+// const symbols = ["💖", "💖", "🌸", "🌸", "✨", "✨", "🤍", "🤍"];
 const symbols = [
-  "images/memorygameimages/IMG_0798.png",
-  "images/memorygameimages/IMG_0798.png",
+  "images/memorygameimages/IMG_0798.PNG",
+  "images/memorygameimages/IMG_0798.PNG",
   "images/memorygameimages/IMG_1076.jpg",
   "images/memorygameimages/IMG_1076.jpg",
   "images/memorygameimages/IMG_1825.jpg",
   "images/memorygameimages/IMG_1825.jpg",
-  "images/memorygameimages/IMG_1969.png",
-  "images/memorygameimages/IMG_1969.png",
+  "images/memorygameimages/IMG_1969.PNG",
+  "images/memorygameimages/IMG_1969.PNG",
   "images/memorygameimages/IMG_3366.jpg",
   "images/memorygameimages/IMG_3366.jpg",
   "images/memorygameimages/IMG_3369.jpg",
