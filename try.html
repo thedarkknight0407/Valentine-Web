@@ -3,116 +3,191 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Me</title>
+    <title>Starry Surprise ✨</title>
 
     <style>
-      body {
+      * {
         margin: 0;
-        background: linear-gradient(180deg, #1f1c2c, #928dab);
-        font-family: system-ui, sans-serif;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+      }
+
+      body {
         height: 100vh;
-        text-align: center;
+        background: radial-gradient(circle at bottom, #1b2735 0%, #090a0f 100%);
+        overflow: hidden;
       }
 
-      #room {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(8px);
-        padding: 26px;
-        border-radius: 18px;
-        width: 90%;
-        max-width: 420px;
-      }
-
-      input,
-      button {
+      .sky {
+        position: relative;
         width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-        border-radius: 12px;
-        border: none;
-        font-size: 1rem;
+        height: 100%;
       }
 
-      button {
-        background: #ff5e78;
-        color: white;
+      .star {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 10px white;
+        animation: twinkle 2s infinite ease-in-out;
         cursor: pointer;
       }
 
-      .hidden {
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Popup */
+      .popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
         display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        width: 80%;
+        max-width: 300px;
+        animation: pop 0.3s ease;
+      }
+
+      @keyframes pop {
+        from {
+          transform: scale(0.7);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .popup-content img {
+        max-height: calc(260 * 2 / 3);
+        max-width: 260px;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-bottom: 10px;
+      }
+
+      .popup-content button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 10px;
+        background: #1b2735;
+        color: white;
+        font-size: 14px;
       }
     </style>
   </head>
 
   <body>
-    <div id="room">
-      <div id="step1">
-        <p>
-          I’m here.<br />
-          Waiting.<br /><br />
-          There’s a lock on the door.<br />
-          It needs a date.
-        </p>
-        <input id="dateInput" placeholder="DD/MM or a word" />
-        <button onclick="unlock1()">Unlock</button>
-      </div>
+    <div class="sky" id="sky"></div>
 
-      <div id="step2" class="hidden">
-        <p>
-          The door creaks open a little.<br /><br />
-          You hesitate.<br />
-          What do you do?
-        </p>
-        <button onclick="unlock2()">Stay</button>
-        <button onclick="unlock2()">Try anyway</button>
-        <button onclick="unlock2()">Choose me</button>
-      </div>
-
-      <div id="step3" class="hidden">
-        <p>
-          One lock left.<br /><br />
-          What are you freeing?
-        </p>
-        <button onclick="wrong()">A girl</button>
-        <button onclick="wrong()">A heart</button>
-        <button onclick="unlock3()">Us</button>
-      </div>
-
-      <div id="end" class="hidden">
-        <p>
-          You did it.<br /><br />
-          I’m free.<br />
-          And I choose you. ❤️
-        </p>
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <img id="popupImage" src="" alt="cute surprise" />
+        <p id="popupText"></p>
+        <button onclick="closePopup()">close ✨</button>
       </div>
     </div>
 
     <script>
-      function unlock1() {
-        const val = document.getElementById("dateInput").value.trim();
-        if (val.length > 0) {
-          step1.classList.add("hidden");
-          step2.classList.remove("hidden");
-        }
+      let click_count = 0;
+      const sky = document.getElementById("sky");
+      const popup = document.getElementById("popup");
+      const popupText = document.getElementById("popupText");
+      const popupImage = document.getElementById("popupImage");
+
+      const messages = [
+        {
+          text: "✨ Stars are said to store memories",
+          img: "images/memorygameimages/IMG_1825.JPG",
+        },
+        {
+          text: "💗 So here are some of my Fav",
+          img: "images/memorygameimages/IMG_3369.JPG",
+        },
+        { text: "🌙 Wish came true", img: "images/IMG_2080.PNG" },
+        {
+          text: "💫 First Trip Hhehe",
+          img: "images/IMG_3365.JPG",
+        },
+        {
+          text: "⭐ Bday Party",
+          img: "images/IMG_6771.JPG",
+        },
+        {
+          text: "🎥 Movie",
+          img: "images/IMG_7875.jpg",
+        },
+        {
+          text: "☕ Coffee Date",
+          img: "images/IMG_8176.JPG",
+        },
+        {
+          text: "😘 Bday (IDK kiska)",
+          img: "images/IMG_0657.JPG",
+        },
+        {
+          text: "🥺 Farewell",
+          img: "images/memorygameimages/IMG_1969.PNG",
+        },
+      ];
+
+      function createStar() {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.animationDelay = Math.random() * 2 + "s";
+
+        star.addEventListener("click", () => {
+          click_count = click_count % messages.length;
+
+          console.log(click_count);
+          let random = null;
+          random = messages[click_count];
+          popupText.textContent = random.text;
+          try {
+            popupImage.src = random.img;
+          } catch {
+            null;
+          }
+          popup.style.display = "flex";
+          click_count++;
+        });
+
+        sky.appendChild(star);
       }
 
-      function unlock2() {
-        step2.classList.add("hidden");
-        step3.classList.remove("hidden");
+      function closePopup() {
+        popup.style.display = "none";
       }
 
-      function unlock3() {
-        step3.classList.add("hidden");
-        end.classList.remove("hidden");
-      }
-
-      function wrong() {
-        alert("Close… but not quite.");
+      // Create stars ✨
+      for (let i = 0; i < 25; i++) {
+        createStar();
       }
     </script>
   </body>

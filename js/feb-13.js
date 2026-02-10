@@ -10,6 +10,7 @@ if (
   8
 ) {
   //   body[0].classList.remove("d-none");
-} else {
-  window.location.href = "shanpatti.html";
 }
+// else {
+//   window.location.href = "shanpatti.html";
+// }

@@ -11,6 +11,64 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="images/svg/heart.svg" type="image/x-svg" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f4f1ee;
+        font-family: Georgia, "Times New Roman", serif;
+        color: #2e2e2e;
+      }
+
+      .container {
+        padding: 2.5rem;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        font-weight: normal;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+        margin: 1.2rem 0;
+      }
+
+      .soft {
+        opacity: 0.8;
+        background: var(--font-clr-pri);
+        padding: 1rem;
+        color: white;
+        border-radius: 20px;
+      }
+
+      button {
+        margin-top: 2rem;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 1rem;
+        color: #6a6a6a;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      button:hover {
+        text-decoration: underline;
+      }
+
+      .line {
+        margin-top: 2rem;
+        height: 1px;
+        background: #ddd;
+        width: 60px;
+      }
+    </style>
   </head>
   <body class="container-fluid d-flex flex-column align-items-center p-5">
     <div class="heading-text">
@@ -41,7 +99,20 @@
         </button>
     </div>
 
-    You sad? See this
+    <div class="container w-100">
+      <h1>You Sad?</h1>
+
+      <p>Click below something is there for you.</p>
+
+      <p class="soft w-100 d-block" id="text">
+        I’m not here to fix you. I just thought you might want something that
+        notices.
+      </p>
+
+      <button onclick="next()">stay here a little longer</button>
+
+      <div class="line"></div>
+    </div>
 
     <div class="footer-text w-100">
       <h4 class="text-end">

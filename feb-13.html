@@ -2,58 +2,194 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
-    <title>Valentines</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="images/svg/heart.svg" type="image/x-svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starry Surprise ✨</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        background: radial-gradient(circle at bottom, #1b2735 0%, #090a0f 100%);
+        overflow: hidden;
+      }
+
+      .sky {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .star {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 10px white;
+        animation: twinkle 2s infinite ease-in-out;
+        cursor: pointer;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Popup */
+      .popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        width: 80%;
+        max-width: 300px;
+        animation: pop 0.3s ease;
+      }
+
+      @keyframes pop {
+        from {
+          transform: scale(0.7);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .popup-content img {
+        max-height: calc(260 * 2 / 3);
+        max-width: 260px;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-bottom: 10px;
+      }
+
+      .popup-content button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 10px;
+        background: #1b2735;
+        color: white;
+        font-size: 14px;
+      }
+    </style>
   </head>
-  <body class="container-fluid d-flex flex-column align-items-center p-5">
-    <div class="heading-text">
-      <h1 class="display-1 text-center">Valentine</h1>
-      <h1 class="display-1 text-center">Advent Calendar</h1>
-      <h4 class="text-end">
-        Made for you
-        <img
-          src="images/svg/heart.svg"
-          style="width: 2.5rem"
-          alt=""
-          srcset=""
-        />
-      </h4>
+
+  <body>
+    <div class="sky" id="sky"></div>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <img id="popupImage" src="" alt="cute surprise" />
+        <p id="popupText"></p>
+        <button onclick="closePopup()">close ✨</button>
+      </div>
     </div>
 
-    <div class="navigator d-flex w-100 justify-content-between my-4">
-        <button 
-        onclick="window.location.href = 'feb-12.html'"
-        class="back btn btn-danger align-self-start" style="width: 3rem;">
-            <svg viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
-        </button>
-        <h4 class="h4">February 13</h4>
-        <button 
-        onclick="window.location.href = 'feb-14.html'"
-        class="next btn btn-danger align-self-end" style="width: 3rem;">
-            <svg viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(180)" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
-        </button>
-    </div>
+    <script>
+      let click_count = 0;
+      const sky = document.getElementById("sky");
+      const popup = document.getElementById("popup");
+      const popupText = document.getElementById("popupText");
+      const popupImage = document.getElementById("popupImage");
 
-    star-map
+      const messages = [
+        {
+          text: "✨ Stars are said to store memories",
+          img: "images/memorygameimages/IMG_1825.JPG",
+        },
+        {
+          text: "💗 So here are some of my Fav",
+          img: "images/memorygameimages/IMG_3369.JPG",
+        },
+        { text: "🌙 Wish came true", img: "images/IMG_2080.PNG" },
+        {
+          text: "💫 First Trip Hhehe",
+          img: "images/IMG_3365.JPG",
+        },
+        {
+          text: "⭐ Bday Party",
+          img: "images/IMG_6771.JPG",
+        },
+        {
+          text: "🎥 Movie",
+          img: "images/IMG_7875.jpg",
+        },
+        {
+          text: "☕ Coffee Date",
+          img: "images/IMG_8176.JPG",
+        },
+        {
+          text: "😘 Bday (IDK kiska)",
+          img: "images/IMG_0657.JPG",
+        },
+        {
+          text: "🥺 Farewell",
+          img: "images/memorygameimages/IMG_1969.PNG",
+        },
+      ];
 
-    <div class="footer-text w-100">
-      <h4 class="text-end">
-        &#8212Made by you know who
-        <img
-          src="images/svg/heart.svg"
-          style="width: 2.5rem"
-          alt=""
-          srcset=""
-        />
-      </h4>
-    </div>
-    <script src="js/feb-13.js"></script>
+      function createStar() {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.animationDelay = Math.random() * 2 + "s";
+
+        star.addEventListener("click", () => {
+          click_count = click_count % messages.length;
+
+          console.log(click_count);
+          let random = null;
+          random = messages[click_count];
+          popupText.textContent = random.text;
+          try {
+            popupImage.src = random.img;
+          } catch {
+            null;
+          }
+          popup.style.display = "flex";
+          click_count++;
+        });
+
+        sky.appendChild(star);
+      }
+
+      function closePopup() {
+        popup.style.display = "none";
+      }
+
+      // Create stars ✨
+      for (let i = 0; i < 25; i++) {
+        createStar();
+      }
+    </script>
   </body>
+  <script src="js/feb-13.js"></script>
 </html>
