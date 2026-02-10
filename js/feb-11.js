@@ -202,18 +202,14 @@ function puzzle_1() {
       .every((tile, i) => tile === i + 1);
     if (isWon || skip)
       setTimeout(() => {
+        canvas.innerHTML = `<button id="p1" class="w-100 btn btn-danger btn-lg d-none">Puzzle 1</button>
+       <button id="p2" class="w-100 btn btn-danger btn-lg d-none">Puzzle 2</button>
+       <button id="p3" class="w-100 btn btn-danger btn-lg d-none">Puzzle 3</button>`;
         const puzzle_2_btn = document.getElementById("p2");
         puzzle_2_btn.classList.remove("d-none");
         const puzzle_1_btn = document.getElementById("p1");
         puzzle_1_btn.classList.add("d-none");
         puzzle_2_btn.addEventListener("click", () => {
-          canvas.innerHTML = `<button id="p1" class="w-100 btn btn-danger btn-lg d-none">Puzzle 1</button>
-       <button id="p2" class="w-100 btn btn-danger btn-lg d-none">Puzzle 2</button>
-       <button id="p3" class="w-100 btn btn-danger btn-lg d-none">Puzzle 3</button>
-
-       <button id="skipp1" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>
-       <button id="skipp2" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>
-       <button id="skipp3" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>`;
           puzzle_2();
         });
       }, 100);
@@ -337,18 +333,14 @@ function puzzle_2() {
     }
     if (match || skip) {
       setTimeout(() => {
+        canvas.innerHTML = `<button id="p1" class="w-100 btn btn-danger btn-lg d-none">Puzzle 1</button>
+       <button id="p2" class="w-100 btn btn-danger btn-lg d-none">Puzzle 2</button>
+       <button id="p3" class="w-100 btn btn-danger btn-lg d-none">Puzzle 3</button>`;
         const puzzle_3_btn = document.getElementById("p3");
         puzzle_3_btn.classList.remove("d-none");
         const puzzle_2_btn = document.getElementById("p2");
         puzzle_2_btn.classList.add("d-none");
         puzzle_3_btn.addEventListener("click", () => {
-          canvas.innerHTML = `<button id="p1" class="w-100 btn btn-danger btn-lg d-none">Puzzle 1</button>
-       <button id="p2" class="w-100 btn btn-danger btn-lg d-none">Puzzle 2</button>
-       <button id="p3" class="w-100 btn btn-danger btn-lg d-none">Puzzle 3</button>
-
-       <button id="skipp1" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>
-       <button id="skipp2" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>
-       <button id="skipp3" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>`;
           puzzle_3();
         });
       }, 1000);
@@ -424,17 +416,13 @@ function puzzle_3() {
 }
 
 function victory() {
+  canvas.innerHTML = `<button id="p1" class="w-100 btn btn-danger btn-lg d-none">Puzzle 1</button>
+       <button id="p2" class="w-100 btn btn-danger btn-lg d-none">Puzzle 2</button>
+       <button id="p3" class="w-100 btn btn-danger btn-lg d-none">Puzzle 3</button>`;
   const puzzle_3_btn = document.getElementById("p3");
   puzzle_3_btn.classList.add("d-none");
   const puzzle_2_btn = document.getElementById("p2");
   puzzle_2_btn.classList.add("d-none");
-  canvas.innerHTML = `<button id="p1" class="w-100 btn btn-danger btn-lg d-none">Puzzle 1</button>
-       <button id="p2" class="w-100 btn btn-danger btn-lg d-none">Puzzle 2</button>
-       <button id="p3" class="w-100 btn btn-danger btn-lg d-none">Puzzle 3</button>
-
-       <button id="skipp1" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>
-       <button id="skipp2" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>
-       <button id="skipp3" class="w-100 btn btn-danger btn-lg d-none">Skip This</button>`;
 
   const div = document.createElement("div");
   div.style.width = "100%";
