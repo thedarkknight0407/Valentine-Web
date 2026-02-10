@@ -446,4 +446,3 @@ function victory() {
 
   canvas.appendChild(div);
 }
-puzzle_1();
